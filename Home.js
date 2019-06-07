@@ -7,6 +7,7 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
+        <Text style={styles.header}>C'est bieng !</Text>
       </View>
     );
   }
@@ -18,5 +19,12 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: '#3511B1',
+    },
+    header: {
+      fontSize: 40,
+      textAlign: 'center',
+      margin: 10,
+      fontFamily: 'Hind-Bold',
+      color : '#F0F1E0'
     }
 });
