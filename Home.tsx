@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { createStackNavigator, createAppContainer } from "react-navigation";
 
-export default class App extends Component {
+class App extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
@@ -10,6 +11,19 @@ export default class App extends Component {
 		);
 	}
 }
+
+const AppNavigator = createStackNavigator(
+	{
+		Home: {
+			screen: App,
+		},
+	},
+	{
+		headerMode: "none",
+	}
+);
+
+export default createAppContainer(AppNavigator);
 
 const styles = StyleSheet.create({
 	container: {
