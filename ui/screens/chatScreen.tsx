@@ -1,12 +1,14 @@
 import React from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View, SafeAreaView } from "react-native";
 
 export const ChatScreen = () => (
-	<ScrollView contentContainerStyle={styles.container}>
-		{["", "", "", "", "", "", "", ""].map((_, i) => (
-			<Bubble key={i} position={i % 2 === 0 ? "left" : "right"} />
-		))}
-	</ScrollView>
+	<SafeAreaView style={styles.container}>
+		<ScrollView contentContainerStyle={styles.container}>
+			{["", "", "", "", "", "", "", ""].map((_, i) => (
+				<Bubble key={i} position={i % 2 === 0 ? "left" : "right"} />
+			))}
+		</ScrollView>
+	</SafeAreaView>
 );
 
 const Bubble: React.FC<{ position: "left" | "right" }> = ({ position }) => {

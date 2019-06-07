@@ -1,21 +1,23 @@
 import React from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View, SafeAreaView } from "react-native";
 
 export const NewContactScreen = () => (
-	<ScrollView contentContainerStyle={styles.container}>
-		{[
-			"Guillaume Berthonneau",
-			"Guillaume Berthonneau",
-			"Guillaume Berthonneau",
-			"Guillaume Berthonneau",
-			"Guillaume Berthonneau",
-		].map((name, i) => (
-			<View style={styles.row} key={i}>
-				<Text style={styles.name}>{name}</Text>
-			</View>
-		))}
-	</ScrollView>
-);
+	<SafeAreaView style={styles.container}>
+		<ScrollView contentContainerStyle={styles.container}>
+			{[
+				"Guillaume Berthonneau",
+				"Guillaume Berthonneau",
+				"Guillaume Berthonneau",
+				"Guillaume Berthonneau",
+				"Guillaume Berthonneau",
+			].map((name, i) => (
+				<View style={styles.row} key={i}>
+					<Text style={styles.name}>{name}</Text>
+				</View>
+			))}
+		</ScrollView>
+	</SafeAreaView>
+)
 
 const styles = StyleSheet.create({
 	container: {

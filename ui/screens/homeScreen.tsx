@@ -1,13 +1,13 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import { NavigationScreenComponent } from "react-navigation";
 import { NewContactButton } from "../components/newContactButton";
 
 export const HomeScreen: NavigationScreenComponent = ({ navigation }) => (
-	<View style={styles.container}>
+	<SafeAreaView style={styles.container}>
 		<Text style={styles.header}>C'est bieng !</Text>
 		<NewContactButton navigation={navigation} />
-	</View>
+	</SafeAreaView>
 );
 
 const styles = StyleSheet.create({
