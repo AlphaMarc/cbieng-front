@@ -5,7 +5,7 @@ export default class App extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
-				<Text style={styles.header}>C'est bieng !</Text>
+				<Text style={styles.header}>C'est chimique !</Text>
 			</View>
 		);
 	}

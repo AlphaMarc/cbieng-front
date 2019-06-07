@@ -1,2 +1,2 @@
-# cbieng
-c'est bieng 
+# cchimique
+c'est chimique
