@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import { SafeAreaView, StyleSheet, Text } from "react-native";
 import { NavigationScreenComponent } from "react-navigation";
 import { NewContactButton } from "../components/newContactButton";
 

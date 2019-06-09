@@ -1,51 +1,32 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { PermissionsAndroid, ScrollView, StyleSheet, Text, View } from "react-native";
-import { getAll } from "react-native-contacts";
+import React, { useContext, useEffect } from "react";
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
+import { useChangingValue } from "../../core/hooks";
+import { ServicesContext } from "../../services/servicesContext";
 
 export const NewContactScreen = () => {
-	const [contacts, setContacts] = useState<string[]>([]);
-
-	const retrieveContacts = useCallback(async () => {
-		const granted = await PermissionsAndroid.request("android.permission.READ_CONTACTS", {
-			title: "salut",
-			message: "message",
-			buttonNeutral: "Ask Me Later",
-			buttonNegative: "Cancel",
-			buttonPositive: "OK",
-		});
-		if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-			console.log("GRANTED");
-			getAll((e, retrievedContacts) => {
-				if (e) {
-					console.warn(e);
-				} else {
-					setContacts(retrievedContacts.map(c => c.givenName));
-				}
-			});
-		} else {
-			console.log("Camera permission denied");
-		}
-	}, []);
+	const { contactService } = useContext(ServicesContext);
+	const contacts = useChangingValue(contactService.contacts, contactService.onContactsChange, []);
 
 	useEffect(() => {
-		retrieveContacts();
+		contactService.syncContacts();
 	}, []);
 
 	return (
-		<ScrollView contentContainerStyle={styles.container}>
-			{contacts.map((name, i) => (
-				<View style={styles.row} key={i}>
-					<Text style={styles.name}>{name}</Text>
-				</View>
-			))}
-		</ScrollView>
+		<SafeAreaView style={styles.container}>
+			<ScrollView>
+				{contacts.map((contact, i) => (
+					<View style={styles.row} key={i}>
+						<Text style={styles.name}>{contact.givenName}</Text>
+					</View>
+				))}
+			</ScrollView>
+		</SafeAreaView>
 	);
 };
 
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		alignItems: "center",
 	},
 	row: {
 		padding: 20,

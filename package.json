@@ -7,6 +7,8 @@
     "test": "jest"
   },
   "dependencies": {
+    "immutable": "^4.0.0-rc.12",
+    "micro-signals": "^2.1.0",
     "react": "16.8.3",
     "react-native": "0.59.9",
     "react-native-contacts": "^4.0.2",
