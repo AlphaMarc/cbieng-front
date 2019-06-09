@@ -7,7 +7,7 @@ import { SearchInput } from "../components/searchInput";
 
 export const NewContactScreen = () => {
 	const { contactService } = useContext(ServicesContext);
-	const contacts = useChangingValue(contactService.contacts, contactService.onContactsChange, []);
+	const contacts = useChangingValue(contactService.phoneContacts, contactService.onPhoneContacts, []);
 	const [filter, setFilter] = useState("");
 
 	useEffect(() => {
