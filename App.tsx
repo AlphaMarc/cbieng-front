@@ -24,8 +24,22 @@ const AppStackNavigator = createStackNavigator(
 	},
 	{
 		initialRouteName: "Contacts",
-		headerMode: "none",
 		cardStyle: { backgroundColor: "#3511B1" },
+		headerBackTitleVisible: false,
+		defaultNavigationOptions: {
+			headerStyle: {
+				backgroundColor: "#3511B1",
+				elevation: 0,
+				borderBottomWidth: 0,
+			},
+			headerTitleStyle: {
+				color: "white",
+				fontSize: 20,
+				fontFamily: "Hind-Bold",
+			},
+			headerTintColor: "white",
+		},
+		headerLayoutPreset: "center",
 	}
 );
 
