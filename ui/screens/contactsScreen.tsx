@@ -1,18 +1,12 @@
 import React from "react";
-import { ScrollView, StyleSheet, Text, View, SafeAreaView } from "react-native";
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import { NavigationScreenComponent } from "react-navigation";
 import { NewContactButton } from "../components/newContactButton";
 
 export const ContactsScreen: NavigationScreenComponent = ({ navigation }) => (
 	<SafeAreaView style={styles.container}>
 		<ScrollView contentContainerStyle={styles.container}>
-			{[
-				"Tom Holer",
-				"Guillaume Berthonneau",
-				"Marc Allaire",
-				"Florian Lassont",
-				"Martin Perinet",
-			].map((name, i) => (
+			{["Tom Holer", "Guillaume Berthonneau", "Marc Allaire", "Florian Lassont", "Martin Perinet"].map((name, i) => (
 				<View style={styles.row} key={i}>
 					<Text onPress={() => navigation.navigate("Chat")} style={styles.name}>
 						{name}

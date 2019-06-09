@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Contact } from "react-native-contacts";
 import { useChangingValue } from "../../core/hooks";
 import { ServicesContext } from "../../services/servicesContext";
 
@@ -14,15 +15,22 @@ export const NewContactScreen = () => {
 	return (
 		<SafeAreaView style={styles.container}>
 			<ScrollView>
-				{contacts.map((contact, i) => (
-					<View style={styles.row} key={i}>
-						<Text style={styles.name}>{contact.givenName}</Text>
-					</View>
-				))}
+				{contacts
+					.filter(contact => contact.phoneNumbers[0])
+					.map((contact, i) => (
+						<ContactRow contact={contact} key={i} />
+					))}
 			</ScrollView>
 		</SafeAreaView>
 	);
 };
+
+const ContactRow: React.FC<{ contact: Contact }> = ({ contact }) => (
+	<View style={styles.row}>
+		<Text style={styles.name}>{contact.givenName}</Text>
+		<Text style={styles.infos}>{`N'utilise pas c'est bieng - ${contact.phoneNumbers[0].number}`}</Text>
+	</View>
+);
 
 const styles = StyleSheet.create({
 	container: {
@@ -31,12 +39,18 @@ const styles = StyleSheet.create({
 	row: {
 		padding: 20,
 		justifyContent: "center",
-		alignItems: "center",
+		alignItems: "flex-start",
+		backgroundColor: "#1b147c",
+		marginBottom: 8,
 	},
 	name: {
 		fontSize: 25,
-		textAlign: "center",
 		fontFamily: "Hind-Bold",
-		color: "#F0F1E0",
+		color: "white",
+	},
+	infos: {
+		fontSize: 13,
+		fontFamily: "Hind-Regular",
+		color: "white",
 	},
 });
