@@ -3,17 +3,17 @@ import { Signal } from "micro-signals";
 import { AsyncStorage, PermissionsAndroid, Platform } from "react-native";
 import { Contact, getAll } from "react-native-contacts";
 
-const CONTACT_KEY = "contacts";
+const CONTACT_KEY = "phone_contacts";
 
 export class ContactService {
-	contacts: List<Contact> = List();
-	onContactsChange = new Signal<List<Contact>>();
+	phoneContacts: List<Contact> = List();
+	onPhoneContacts = new Signal<List<Contact>>();
 
 	async init() {
 		const contacts = await AsyncStorage.getItem(CONTACT_KEY);
 		if (contacts) {
-			this.contacts = List(JSON.parse(contacts));
-			this.onContactsChange.dispatch(this.contacts);
+			this.phoneContacts = List(JSON.parse(contacts));
+			this.onPhoneContacts.dispatch(this.phoneContacts);
 		}
 	}
 	async syncContacts() {
@@ -23,9 +23,9 @@ export class ContactService {
 				if (err) {
 					console.warn(err);
 				} else {
-					this.contacts = List(contacts);
-					AsyncStorage.setItem(CONTACT_KEY, JSON.stringify(this.contacts.toArray()));
-					this.onContactsChange.dispatch(this.contacts);
+					this.phoneContacts = List(contacts);
+					AsyncStorage.setItem(CONTACT_KEY, JSON.stringify(this.phoneContacts.toArray()));
+					this.onPhoneContacts.dispatch(this.phoneContacts);
 				}
 			});
 		}
