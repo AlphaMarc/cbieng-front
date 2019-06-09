@@ -1,10 +1,13 @@
+import React from "react";
 import { createAppContainer, createStackNavigator } from "react-navigation";
+import { ContactService } from "./services/contactsService";
+import { ServicesContext } from "./services/servicesContext";
 import { ChatScreen } from "./ui/screens/chatScreen";
 import { ContactsScreen } from "./ui/screens/contactsScreen";
 import { HomeScreen } from "./ui/screens/homeScreen";
 import { NewContactScreen } from "./ui/screens/newContactScreen";
 
-const AppNavigator = createStackNavigator(
+const AppStackNavigator = createStackNavigator(
 	{
 		Home: {
 			screen: HomeScreen,
@@ -26,4 +29,13 @@ const AppNavigator = createStackNavigator(
 	}
 );
 
-export const App = createAppContainer(AppNavigator);
+const contactService = new ContactService();
+contactService.init();
+
+const AppNavigator = createAppContainer(AppStackNavigator);
+
+export const App = () => (
+	<ServicesContext.Provider value={{ contactService }}>
+		<AppNavigator />
+	</ServicesContext.Provider>
+);
