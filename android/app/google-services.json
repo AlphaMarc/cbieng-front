@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1067436718220",
+    "firebase_url": "https://cbieng-dev.firebaseio.com",
+    "project_id": "cbieng-dev",
+    "storage_bucket": "cbieng-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067436718220:android:45b61207ce2f4b84",
+        "android_client_info": {
+          "package_name": "com.cbieng"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1067436718220-1itmd0b22s68hbsvpv963vep63kidpn9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTQ9Ii__AmqpAUPNVFN_YFjaNRTzedQ9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1067436718220-1itmd0b22s68hbsvpv963vep63kidpn9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1067436718220-i50i9rlloqsaaaad07g4s1hq3lktd0bv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.CBieng"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
