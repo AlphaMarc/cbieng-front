@@ -9,7 +9,7 @@ export const OnBoardingScreen = () => {
     const SCREEN_WIDTH = Dimensions.get("window").width;
 
 
-   const transitionAnimation = (maxRange: number) => {
+   const translationAnimation = (maxRange: number) => {
         return {
             
             transform :[
@@ -25,8 +25,30 @@ export const OnBoardingScreen = () => {
         }
    }
 
+   const rotationAnimation = (maxRange: number) => {
+    return {
+        
+        transform :[
+            {rotate: yOffset.interpolate({
+                inputRange: [
+                    0, SCREEN_WIDTH
+                ],
+                outputRange: ["29deg", "129deg"]
+                })
+            }, 
+            {translateY: yOffset.interpolate({
+                inputRange: [
+                    0, SCREEN_WIDTH
+                ],
+                outputRange: [
+                    0, maxRange
+                ]})
+            }
+        ]
+    }
+}
+
     return (
-        <SafeAreaView style={styles.container}>
        <Animated.ScrollView
             onScroll={Animated.event(
             [{ nativeEvent: { contentOffset: { y: yOffset } } }],
@@ -34,18 +56,17 @@ export const OnBoardingScreen = () => {
         )}
        >
             <Animated.Image
-                style={[styles.yellowBubble, transitionAnimation(500)]}
+                style={[styles.yellowBubble, translationAnimation(500)]}
                 source={require('../../assets/images/yellowoval.png')} 
              />
             <Animated.Image
-                source={require('../../assets/images/blueoval.png')} style={[styles.blueBubble, , transitionAnimation(-200)]}
+                source={require('../../assets/images/blueoval.png')} style={[styles.blueBubble, translationAnimation(-200)]}
              />
-            <View style={styles.blueRectangle}/>
+            <Animated.View style={[styles.blueRectangle, rotationAnimation(-100)]}/>
 
             <Text style={styles.header}>Bienvenue sur l'application C'est Bieng!</Text>
             <Text style={styles.paragraph}>La première app qui te permet de dire à tes potes c'est bieng  🤟</Text>
         </Animated.ScrollView>
-        </SafeAreaView>
     );
 
 };
@@ -88,7 +109,6 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         height: 356,
         width: 400,
-        transform: [{rotate: '29deg'}],
         backgroundColor: '#50EDFF',
     }
 });
