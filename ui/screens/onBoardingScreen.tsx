@@ -1,23 +1,50 @@
-import { SafeAreaView, StyleSheet, Text, View, Animated, Image } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View, Animated, Image, Dimensions } from "react-native";
 import React from "react";
+import { ScrollView } from "react-native-gesture-handler";
 
 
 export const OnBoardingScreen = () => {
 
-   
+    const yOffset : Animated.Value = new Animated.Value(0);
+    const SCREEN_WIDTH = Dimensions.get("window").width;
+
+
+   const transitionAnimation = (maxRange: number) => {
+        return {
+            
+            transform :[
+                {translateY: yOffset.interpolate({
+                    inputRange: [
+                        0, SCREEN_WIDTH
+                    ],
+                    outputRange: [
+                        0, maxRange
+                    ]
+                })}
+            ]
+        }
+   }
 
     return (
         <SafeAreaView style={styles.container}>
-            <Image
-                source={require('../../assets/images/yellowoval.png')} style={styles.yellowBubble}
+       <Animated.ScrollView
+            onScroll={Animated.event(
+            [{ nativeEvent: { contentOffset: { y: yOffset } } }],
+            { useNativeDriver: true }
+        )}
+       >
+            <Animated.Image
+                style={[styles.yellowBubble, transitionAnimation(500)]}
+                source={require('../../assets/images/yellowoval.png')} 
              />
-            <Image
-                source={require('../../assets/images/blueoval.png')} style={styles.blueBubble}
+            <Animated.Image
+                source={require('../../assets/images/blueoval.png')} style={[styles.blueBubble, , transitionAnimation(-200)]}
              />
             <View style={styles.blueRectangle}/>
 
             <Text style={styles.header}>Bienvenue sur l'application C'est Bieng!</Text>
             <Text style={styles.paragraph}>La première app qui te permet de dire à tes potes c'est bieng  🤟</Text>
+        </Animated.ScrollView>
         </SafeAreaView>
     );
 
