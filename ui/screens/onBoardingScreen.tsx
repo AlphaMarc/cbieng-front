@@ -1,14 +1,19 @@
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View, Animated, Image } from "react-native";
 import React from "react";
-import LinearGradient from 'react-native-linear-gradient';
 
 
 export const OnBoardingScreen = () => {
 
+   
+
     return (
         <SafeAreaView style={styles.container}>
-            <LinearGradient colors={['#FFEF50','#FF9E4E']} style={styles.yellowBubble}/>
-            <LinearGradient colors={['#2CA8FF','#50EDFF']} style={styles.blueBubble}/>
+            <Image
+                source={require('../../assets/images/yellowoval.png')} style={styles.yellowBubble}
+             />
+            <Image
+                source={require('../../assets/images/blueoval.png')} style={styles.blueBubble}
+             />
             <View style={styles.blueRectangle}/>
 
             <Text style={styles.header}>Bienvenue sur l'application C'est Bieng!</Text>
@@ -43,18 +48,11 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: 458,
         left: 62,
-        borderRadius: 50,
-        height: 80,
-        width: 80,
     },
     blueBubble:{
         position: 'absolute',
         top: 212,
         left: 273,
-        borderRadius: 50,
-        height: 20,
-        width: 20,
-        backgroundColor: '#2CA8FF',
     },
     blueRectangle: {
         position: 'absolute',
