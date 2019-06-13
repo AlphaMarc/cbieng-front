@@ -3,7 +3,7 @@ import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import { Contact } from "react-native-contacts";
 import { useChangingValue } from "../../core/hooks";
 import { ServicesContext } from "../../services/servicesContext";
-import { SearchInput } from "../components/searchInput";
+import { TextInput } from "../components/searchInput";
 
 export const NewContactScreen = () => {
 	const { contactService } = useContext(ServicesContext);
@@ -16,7 +16,8 @@ export const NewContactScreen = () => {
 
 	return (
 		<SafeAreaView style={styles.container}>
-			<SearchInput
+			<TextInput
+				type="search"
 				style={styles.input}
 				placeholder="Chercher un contact"
 				value={filter}

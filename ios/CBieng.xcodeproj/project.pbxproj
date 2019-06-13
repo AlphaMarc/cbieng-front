@@ -409,6 +409,7 @@
 		AB7F1D0C9FC24B79A8401787 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = "<group>"; };
 		AD6DA0FDDC74DDE0121C4CAF /* Pods-CBiengTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBiengTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CBiengTests/Pods-CBiengTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
+		B45031B922B2A608000B56B0 /* CBieng.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = CBieng.entitlements; path = CBieng/CBieng.entitlements; sourceTree = "<group>"; };
 		B45B2B2E22B29E4B006B2D30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E00623C6CFCD4C0189247FC6 /* Hind-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hind-Bold.ttf"; path = "../assets/fonts/Hind-Bold.ttf"; sourceTree = "<group>"; };
 		E54DCA8AA622BA890CB648BD /* libPods-CBieng.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CBieng.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -562,6 +563,7 @@
 		13B07FAE1A68108700A75B9A /* CBieng */ = {
 			isa = PBXGroup;
 			children = (
+				B45031B922B2A608000B56B0 /* CBieng.entitlements */,
 				B45B2B2E22B29E4B006B2D30 /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -861,9 +863,10 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = HMBNS2B3A7;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -1546,8 +1549,10 @@
 			baseConfigurationReference = 604D2CAEEAEE3115DE9917E1 /* Pods-CBieng.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CBieng/CBieng.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = HMBNS2B3A7;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
@@ -1572,7 +1577,9 @@
 			baseConfigurationReference = A40445991A866859468BEB08 /* Pods-CBieng.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CBieng/CBieng.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HMBNS2B3A7;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",

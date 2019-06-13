@@ -1,12 +1,21 @@
 import React from "react";
-import { Image, Platform, StyleSheet, TextInputProps, View } from "react-native";
-import { TextInput } from "react-native-gesture-handler";
+import { Image, StyleSheet, Text, TextInput as RNTextInput, TextInputProps, View } from "react-native";
 
-export const SearchInput: React.FC<TextInputProps> = ({ style, ...props }) => {
+export const TextInput: React.FC<TextInputProps & { type: "search" | "phone" | "default" }> = ({
+	style,
+	type,
+	...props
+}) => {
 	return (
 		<View style={[styles.container, style]}>
-			<Image style={styles.icon} source={require("../../assets/images/search.png")} />
-			<TextInput {...props} style={styles.input} />
+			{type === "search" ? (
+				<Image style={styles.icon} source={require("../../assets/images/search.png")} />
+			) : type === "phone" ? (
+				<View>
+					<Text style={styles.phoneCode}>+33</Text>
+				</View>
+			) : null}
+			<RNTextInput {...props} style={styles.input} />
 		</View>
 	);
 };
@@ -25,15 +34,12 @@ const styles = StyleSheet.create({
 		height: 20,
 		marginRight: 16,
 	},
+	phoneCode: {
+		fontSize: 15,
+	},
 	input: {
 		fontSize: 15,
 		paddingVertical: 0,
-		...Platform.select({
-			android: {
-				lineHeight: 15,
-				height: 20,
-			},
-		}),
 		flex: 1,
 	},
 });
