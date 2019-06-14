@@ -7,6 +7,7 @@ import { ContactsScreen } from "./ui/screens/contactsScreen";
 import { HomeScreen } from "./ui/screens/homeScreen";
 import { NewContactScreen } from "./ui/screens/newContactScreen";
 import { OnBoardingScreen } from "./ui/screens/onBoardingScreen";
+import { tsNonNullExpression } from "@babel/types";
 
 const AppStackNavigator = createStackNavigator(
 	{
@@ -24,6 +25,9 @@ const AppStackNavigator = createStackNavigator(
 		},
 		OnBoarding: {
 			screen: OnBoardingScreen,
+			navigationOptions: {
+				header: null,
+			},
 		},
 	},
 	{
