@@ -3,8 +3,10 @@ import React from "react";
 import {SoundService} from "../../services/soundService"
 
 const SCREEN_HEIGHT = Dimensions.get("window").height;
+const SCREEN_WIDTH = Dimensions.get("window").width;
 
-export const OnBoardingScreen = () => {
+
+export const OnBoardingScreen = ({ navigation }) => {
 
     const yOffset : Animated.Value = new Animated.Value(0);
 
@@ -78,9 +80,17 @@ export const OnBoardingScreen = () => {
                 />
                 </TouchableOpacity>
                 <Text style={styles.header} >C'est Bieng !</Text>
-
             </View>
             <View style={styles.padding}/>
+            <View style={styles.inviteview}>
+                <View style={styles.inviteTextView}> 
+                <Text style={styles.header}>Pour commencer à bienguer invite un pote</Text>
+                </View>
+                <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate('NewContact')}>
+                    <Text style = {styles.actionButtonText}>Invite un pote</Text>
+                </TouchableOpacity>
+            </View>
+
 
         </Animated.ScrollView>
     );
@@ -96,8 +106,8 @@ const styles = StyleSheet.create({
         paddingBottom: SCREEN_HEIGHT/2,
     },
     welcomeView: {
-        paddingLeft: 46,
-        paddingRight: 137,
+        paddingLeft: SCREEN_WIDTH/10,
+        paddingRight: SCREEN_WIDTH/3,
         paddingTop: SCREEN_HEIGHT /10,
         marginBottom: 28,
         height: SCREEN_HEIGHT /2,
@@ -143,6 +153,30 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         alignItems: 'center',
         height: SCREEN_HEIGHT /2,
+    },
+    inviteview: {
+        
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        height: SCREEN_HEIGHT /2,
+    },
+    inviteTextView : {
+        paddingLeft: SCREEN_WIDTH/10,
+        paddingRight: SCREEN_WIDTH/4,
+        paddingBottom: 25,
+    },
+    actionButton: {
+        backgroundColor: "#f4b300",
+        borderRadius : 30,
+        height : 50,
+        alignItems : 'center',
+        justifyContent : 'center'
+    },
+    actionButtonText: {
+        fontSize: 15,
+		fontFamily: "Hind-Bold",
+        color: "#000",
+        paddingHorizontal: 50,
     }
 });
 
