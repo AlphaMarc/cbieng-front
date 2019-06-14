@@ -1,6 +1,6 @@
-import { SafeAreaView, StyleSheet, Text, View, Animated, Image, Dimensions } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View, Animated, Image, Dimensions, TouchableOpacity } from "react-native";
 import React from "react";
-import { ScrollView } from "react-native-gesture-handler";
+import {SoundService} from "../../services/soundService"
 
 const SCREEN_HEIGHT = Dimensions.get("window").height;
 
@@ -71,10 +71,12 @@ export const OnBoardingScreen = () => {
 
             <View style={styles.padding}/>
             <View style={styles.volumeview}>
+                <TouchableOpacity onPress={() => SoundService.playSong(SoundService.cBieng)}>
                 <Image
                     style={styles.volume}
                     source={require('../../assets/images/volume.png')}
                 />
+                </TouchableOpacity>
                 <Text style={styles.header} >C'est Bieng !</Text>
 
             </View>

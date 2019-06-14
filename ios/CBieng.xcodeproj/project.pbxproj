@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -43,12 +44,13 @@
 		7873A54CFFEC4BC5A3E0E7C7 /* libRCTContacts.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3176F675980440AAADA11102 /* libRCTContacts.a */; };
 		7C4BA5BC43FC4082A0136F7C /* libRNGestureHandler-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 028312052D1147C9BB66E50A /* libRNGestureHandler-tvOS.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		A7B16D9B22B3CA750042FA3B /* cbieng.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A7B16D9A22B3CA750042FA3B /* cbieng.mp3 */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
+		BB4BA1102D0749D7AE598A63 /* libRNSound.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AF5C89DE93A4C208186AC4C /* libRNSound.a */; };
 		BD2F63BAF8A54D3A9A6437B0 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7F1D0C9FC24B79A8401787 /* libRNGestureHandler.a */; };
 		E9D13096FB9B43B480CD8FE9 /* Hind-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45EE0FC9ED4443EA8DC51634 /* Hind-Medium.ttf */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
-		BB4BA1102D0749D7AE598A63 /* libRNSound.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AF5C89DE93A4C208186AC4C /* libRNSound.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -339,6 +341,13 @@
 			remoteGlobalIDString = 64AA15081EF7F30100718508;
 			remoteInfo = "BVLinearGradient-tvOS";
 		};
+		A7B16D9822B3CA510042FA3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0F5C8AAD8D20450DA8F0D067 /* RNSound.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 19825A1E1BD4A89800EE0337;
+			remoteInfo = RNSound;
+		};
 		ADBDB9261DFEBF0700ED6528 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */;
@@ -380,8 +389,10 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* CBiengTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBiengTests.m; sourceTree = "<group>"; };
 		028312052D1147C9BB66E50A /* libRNGestureHandler-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNGestureHandler-tvOS.a"; sourceTree = "<group>"; };
+		0AF5C89DE93A4C208186AC4C /* libRNSound.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSound.a; sourceTree = "<group>"; };
 		0B3EE980546B4777A970DE3E /* Hind-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hind-Regular.ttf"; path = "../assets/fonts/Hind-Regular.ttf"; sourceTree = "<group>"; };
 		0C948C0C29BE4497A688C968 /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNGestureHandler.xcodeproj; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; };
+		0F5C8AAD8D20450DA8F0D067 /* RNSound.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSound.xcodeproj; path = "../node_modules/react-native-sound/RNSound.xcodeproj"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* CBieng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBieng.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -403,6 +414,7 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		97A947816DD04D3691AC082F /* Hind-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hind-Light.ttf"; path = "../assets/fonts/Hind-Light.ttf"; sourceTree = "<group>"; };
 		A7B16CB922B27A000042FA3B /* RCTContacts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTContacts.xcodeproj; path = "../node_modules/react-native-contacts/ios/RCTContacts.xcodeproj"; sourceTree = "<group>"; };
+		A7B16D9A22B3CA750042FA3B /* cbieng.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = cbieng.mp3; path = ../assets/sounds/cbieng.mp3; sourceTree = "<group>"; };
 		A9348C2405484F58A2F38E7D /* Hind-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hind-SemiBold.ttf"; path = "../assets/fonts/Hind-SemiBold.ttf"; sourceTree = "<group>"; };
 		AB7F1D0C9FC24B79A8401787 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
@@ -411,8 +423,6 @@
 		E00623C6CFCD4C0189247FC6 /* Hind-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hind-Bold.ttf"; path = "../assets/fonts/Hind-Bold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		0F5C8AAD8D20450DA8F0D067 /* RNSound.xcodeproj */ = {isa = PBXFileReference; name = "RNSound.xcodeproj"; path = "../node_modules/react-native-sound/RNSound.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		0AF5C89DE93A4C208186AC4C /* libRNSound.a */ = {isa = PBXFileReference; name = "libRNSound.a"; path = "libRNSound.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -656,6 +666,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				A7B16D9A22B3CA750042FA3B /* cbieng.mp3 */,
 				13B07FAE1A68108700A75B9A /* CBieng */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* CBiengTests */,
@@ -685,6 +696,7 @@
 			isa = PBXGroup;
 			children = (
 				D34BCB5B3C2744EEA3745C3E /* libBVLinearGradient.a */,
+				0AF5C89DE93A4C208186AC4C /* libRNSound.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -702,6 +714,14 @@
 			children = (
 				A7B16D3622B282AA0042FA3B /* libBVLinearGradient.a */,
 				A7B16D3822B282AA0042FA3B /* libBVLinearGradient.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A7B16D9522B3CA510042FA3B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A7B16D9922B3CA510042FA3B /* libRNSound.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -883,12 +903,12 @@
 					ProjectRef = ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */;
 				},
 				{
-					ProductGroup = B4FBE36322AA76F200A6A920 /* Products */;
-					ProjectRef = 36F090DC04914F6ABD583ABB /* RCTContacts.xcodeproj */;
-				},
-				{
 					ProductGroup = A7B16CBA22B27A000042FA3B /* Products */;
 					ProjectRef = A7B16CB922B27A000042FA3B /* RCTContacts.xcodeproj */;
+				},
+				{
+					ProductGroup = B4FBE36322AA76F200A6A920 /* Products */;
+					ProjectRef = 36F090DC04914F6ABD583ABB /* RCTContacts.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302B61ABCB90400DB3ED1 /* Products */;
@@ -929,6 +949,10 @@
 				{
 					ProductGroup = B4FBE36522AA76F200A6A920 /* Products */;
 					ProjectRef = 0C948C0C29BE4497A688C968 /* RNGestureHandler.xcodeproj */;
+				},
+				{
+					ProductGroup = A7B16D9522B3CA510042FA3B /* Products */;
+					ProjectRef = 0F5C8AAD8D20450DA8F0D067 /* RNSound.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1215,6 +1239,13 @@
 			remoteRef = A7B16D3722B282AA0042FA3B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		A7B16D9922B3CA510042FA3B /* libRNSound.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNSound.a;
+			remoteRef = A7B16D9822B3CA510042FA3B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1257,6 +1288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7B16D9B22B3CA750042FA3B /* cbieng.mp3 in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				122D3560575F43B088F05E2B /* Hind-Bold.ttf in Resources */,
