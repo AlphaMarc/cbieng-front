@@ -24,7 +24,7 @@ export async function getAll(): Promise<OsContact[]> {
 
 function mergePhoneNumbers(RNContactEntrys: RNContactEntry[]): Set<string> {
 	return RNContactEntrys.reduce(
-		(phones, contact) => phones.merge(contact.phoneNumbers.map(p => p.number.replace(/[^+0-9]/, ""))),
+		(phones, contact) => phones.merge(contact.phoneNumbers.map(p => p.number)),
 		Set<string>()
 	);
 }
