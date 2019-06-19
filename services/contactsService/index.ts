@@ -1,13 +1,15 @@
 import { List } from "immutable";
 import { Signal } from "micro-signals";
 import { AsyncStorage, PermissionsAndroid, Platform } from "react-native";
-import { Contact, getAll } from "react-native-contacts";
+import { getAll } from "./native";
+import { findRegisteredFriends } from "./firebase";
+import { OsContact } from "./model";
 
 const CONTACT_KEY = "phone_contacts";
 
 export class ContactService {
-	phoneContacts: List<Contact> = List();
-	onPhoneContacts = new Signal<List<Contact>>();
+	phoneContacts: List<OsContact> = List();
+	onPhoneContacts = new Signal<List<OsContact>>();
 
 	async init() {
 		const contacts = await AsyncStorage.getItem(CONTACT_KEY);
@@ -19,15 +21,15 @@ export class ContactService {
 	async syncContacts() {
 		const allowed = Platform.OS === "ios" || (await this.getAndroidPermission());
 		if (allowed) {
-			getAll((err, contacts) => {
-				if (err) {
-					console.warn(err);
-				} else {
-					this.phoneContacts = List(contacts);
-					AsyncStorage.setItem(CONTACT_KEY, JSON.stringify(this.phoneContacts.toArray()));
-					this.onPhoneContacts.dispatch(this.phoneContacts);
-				}
-			});
+			try {
+				this.phoneContacts = List(await getAll());
+			} catch (e) {
+				console.error(e);
+				this.phoneContacts = List();
+			}
+
+			AsyncStorage.setItem(CONTACT_KEY, JSON.stringify(this.phoneContacts.toArray()));
+			this.onPhoneContacts.dispatch(this.phoneContacts);
 		}
 	}
 
