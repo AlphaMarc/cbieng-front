@@ -19,7 +19,7 @@ platform :ios do
 
   desc "Pull remote development certificates and provisionning"
   lane :match_dev_readonly do
-    match(type: "development", app_identifier: "com.betomorrow.cbieng.dev", readonly: true)
+    match(type: "development", app_identifier: ["com.betomorrow.cbieng.dev","com.betomorrow.cbieng"], readonly: true)
   end
 
   desc "Submit a new Dev build to AppCenter"

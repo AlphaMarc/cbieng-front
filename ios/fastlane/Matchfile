@@ -1,4 +1,4 @@
-git_url("git@bitbucket.org:mcf_/fastlane_test.git")
+git_url("git@gitlab.com:betomorrow/interne/projets-tiers/cbieng/cbieng-fastlane.git")
 
 storage_mode("git")
 
