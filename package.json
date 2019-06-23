@@ -1,60 +1,74 @@
 {
-  "name": "CBieng",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
-  },
-  "dependencies": {
-    "immutable": "^4.0.0-rc.12",
-    "micro-signals": "^2.1.0",
-    "react": "16.8.3",
-    "react-native": "0.59.9",
-    "react-native-contacts": "^4.0.2",
-    "react-native-gesture-handler": "^1.3.0",
-    "react-navigation": "^3.11.0"
-  },
-  "devDependencies": {
-    "@babel/core": "7.4.5",
-    "@babel/runtime": "7.4.5",
-    "@types/jest": "^24.0.13",
-    "@types/react": "^16.8.19",
-    "@types/react-native": "^0.57.60",
-    "@types/react-navigation": "^3.0.7",
-    "@types/react-test-renderer": "^16.8.1",
-    "babel-jest": "24.8.0",
-    "jest": "24.8.0",
-    "metro-react-native-babel-preset": "0.54.1",
-    "prettier": "^1.18.0",
-    "react-native-typescript-transformer": "^1.2.12",
-    "react-test-renderer": "16.8.3",
-    "ts-jest": "^24.0.2",
-    "tslint": "^5.17.0",
-    "tslint-no-circular-imports": "^0.7.0",
-    "typescript": "^3.5.1"
-  },
-  "jest": {
-    "preset": "react-native",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "transform": {
-      "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
-      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-    },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    "testPathIgnorePatterns": [
-      "\\.snap$",
-      "<rootDir>/node_modules/"
-    ],
-    "cacheDirectory": ".jest/cache"
-  },
-  "rnpm": {
-    "assets": [
-      "./assets/fonts/"
-    ]
-  }
+	"name": "cbieng",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"postinstall": "react-native-schemes-manager all",
+		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"ios": "react-native run-ios --configuration='Dev Debug'",
+		"android": "react-native run-android --variant devDebug --appIdSuffix=dev",
+		"test": "jest"
+	},
+	"dependencies": {
+		"immutable": "^4.0.0-rc.12",
+		"micro-signals": "^2.1.0",
+		"react": "16.8.3",
+		"react-native": "0.59.9",
+		"react-native-contacts": "^4.0.2",
+		"react-native-gesture-handler": "^1.3.0",
+		"react-navigation": "^3.11.0"
+	},
+	"devDependencies": {
+		"@babel/core": "7.4.5",
+		"@babel/runtime": "7.4.5",
+		"@types/jest": "^24.0.13",
+		"@types/react": "^16.8.19",
+		"@types/react-native": "^0.57.60",
+		"@types/react-navigation": "^3.0.7",
+		"@types/react-test-renderer": "^16.8.1",
+		"babel-jest": "24.8.0",
+		"jest": "24.8.0",
+		"metro-react-native-babel-preset": "0.54.1",
+		"prettier": "^1.18.0",
+		"react-native-schemes-manager": "^2.0.0",
+		"react-native-typescript-transformer": "^1.2.12",
+		"react-test-renderer": "16.8.3",
+		"ts-jest": "^24.0.2",
+		"tslint": "^5.17.0",
+		"tslint-no-circular-imports": "^0.7.0",
+		"typescript": "^3.5.1"
+	},
+	"jest": {
+		"preset": "react-native",
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js"
+		],
+		"transform": {
+			"^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
+			"\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+		},
+		"testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+		"testPathIgnorePatterns": [
+			"\\.snap$",
+			"<rootDir>/node_modules/"
+		],
+		"cacheDirectory": ".jest/cache"
+	},
+	"rnpm": {
+		"assets": [
+			"./assets/fonts/"
+		]
+	},
+	"xcodeSchemes": {
+		"Debug": [
+			"Dev Debug",
+			"Prod Debug"
+		],
+		"Release": [
+			"Dev Release",
+			"Prod Release"
+		]
+	}
 }

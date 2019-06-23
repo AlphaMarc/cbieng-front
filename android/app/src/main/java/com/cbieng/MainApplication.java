@@ -1,4 +1,4 @@
-package com.cbieng;
+package com.betomorrow.cbieng;
 
 import android.app.Application;
 
