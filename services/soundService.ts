@@ -1,4 +1,4 @@
-const Sound = require('react-native-sound')
+import Sound from "react-native-sound"
 
 export class SoundService {
 
