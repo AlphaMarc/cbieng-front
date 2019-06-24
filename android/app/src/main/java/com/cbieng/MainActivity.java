@@ -1,4 +1,4 @@
-package com.cbieng;
+package com.betomorrow.cbieng;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
