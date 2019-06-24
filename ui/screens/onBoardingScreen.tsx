@@ -1,12 +1,13 @@
 import { SafeAreaView, StyleSheet, Text, View, Animated, Image, Dimensions, TouchableOpacity } from "react-native";
 import React from "react";
 import {SoundService} from "../../services/soundService"
+import { NavigationScreenComponent } from "react-navigation";
 
 const SCREEN_HEIGHT = Dimensions.get("window").height;
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
 
-export const OnBoardingScreen = ({ navigation }) => {
+export const OnBoardingScreen: NavigationScreenComponent = ({ navigation }) => {
 
     const yOffset : Animated.Value = new Animated.Value(0);
 
@@ -57,6 +58,7 @@ export const OnBoardingScreen = ({ navigation }) => {
             [{ nativeEvent: { contentOffset: { y: yOffset } } }],
             { useNativeDriver: true })}
             style={styles.container}
+            scrollEventThrottle={1}
        >
             <Animated.Image
                 style={[styles.yellowBubble, translationAnimation(500)]}

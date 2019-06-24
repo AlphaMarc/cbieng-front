@@ -11,8 +11,6 @@ export class SoundService {
     static playSong = function (song :any ) { song.play((success : any) => {
         if (!success) {
         console.warn('Sound did not play')
-        } else {
-            console.warn('sound did play')
         }
     })}
 
