@@ -93,6 +93,10 @@ def enableSeparateBuildPerCPUArchitecture = false
  */
 def enableProguardInReleaseBuilds = false
 
+def retrieveVersionCode() {
+    return hasProperty("versionCode") ? versionCode as Integer : 1
+}
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
@@ -102,10 +106,10 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.cbieng"
+        applicationId "com.betomorrow.cbieng"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
+        versionCode retrieveVersionCode()
         versionName "1.0"
     }
     splits {
@@ -122,6 +126,28 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+
+    flavorDimensions "environment"
+    productFlavors {
+        dev {
+            dimension "environment"
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+            manifestPlaceholders = [
+                appName: "Cbieng Dev",
+                appIcon: "@mipmap/ic_launcher"
+            ]
+        }
+
+        prod {
+            dimension "environment"
+            manifestPlaceholders = [
+                appName: "Cbieng",
+                appIcon: "@mipmap/ic_launcher"
+            ]
+        }
+    }
+
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
