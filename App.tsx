@@ -9,6 +9,7 @@ import { ContactsScreen } from "./ui/screens/contactsScreen";
 import { HomeScreen } from "./ui/screens/homeScreen";
 import { LoginScreen } from "./ui/screens/loginScreen";
 import { NewContactScreen } from "./ui/screens/newContactScreen";
+import { FriendService } from "./services/friendService";
 
 const stackOptions: StackNavigatorConfig = {
 	cardStyle: { backgroundColor: "#3511B1" },
@@ -58,6 +59,7 @@ const AuthStackNavigator = createStackNavigator(
 
 const contactService = new ContactService();
 const authService = new AuthService();
+const friendService = new FriendService();
 contactService.init();
 
 const AppNavigator = createAppContainer(AppStackNavigator);
@@ -74,7 +76,7 @@ export const App = () => {
 	}, []);
 	return (
 		initialized && (
-			<ServicesContext.Provider value={{ contactService, authService }}>
+			<ServicesContext.Provider value={{ contactService, authService, friendService }}>
 				{user ? <AppNavigator /> : <AuthNavigator />}
 			</ServicesContext.Provider>
 		)

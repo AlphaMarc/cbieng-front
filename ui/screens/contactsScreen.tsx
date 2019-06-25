@@ -1,6 +1,8 @@
-import React, { useState } from "react";
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
-import { NavigationScreenComponent } from "react-navigation";
+import React, { useContext, useMemo, useState } from "react";
+import { ActivityIndicator, FlatListProps, ListRenderItem, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { FlatList, NavigationScreenComponent, withNavigation } from "react-navigation";
+import { Friend } from "../../services/friendService";
+import { ServicesContext } from "../../services/servicesContext";
 import { NewContactButton } from "../components/newContactButton";
 import { TextInput } from "../components/searchInput";
 
@@ -9,30 +11,46 @@ export const ContactsScreen: NavigationScreenComponent = ({ navigation }) => {
 
 	return (
 		<SafeAreaView style={styles.container}>
-			<TextInput
-				type="search"
-				style={styles.input}
-				placeholder="Chercher un contact"
-				value={filter}
-				onChangeText={v => setFilter(v)}
-			/>
-			<ScrollView>
-				{["Tom Hohler", "Guillaume Berthonneau", "Marc Allaire", "Florian Lassont", "Martin Perinet"]
-					.filter(c => c.includes(filter))
-					.map((name, i) => (
-						<View style={styles.row} key={i}>
-							<Text onPress={() => navigation.navigate("Chat")} style={styles.name}>
-								{name}
-							</Text>
-						</View>
-					))}
-			</ScrollView>
+			<React.Suspense fallback={<ActivityIndicator />}>
+				<TextInput
+					type="search"
+					style={styles.input}
+					placeholder="Chercher un contact"
+					value={filter}
+					onChangeText={v => setFilter(v)}
+				/>
+				<ContactsList filter={filter} />
+			</React.Suspense>
 			<NewContactButton navigation={navigation} style={styles.button} />
 		</SafeAreaView>
 	);
 };
 
 ContactsScreen.navigationOptions = { title: "C’est bieng mes contacts 🤘" };
+
+const ContactsList: React.FC<{ filter: string }> = ({ filter }) => {
+	const { friendService } = useContext(ServicesContext);
+	const filterFn = useMemo(() => (f: Friend) => f.name.includes(filter), [filter]);
+	const keyExtractor: FlatListProps<Friend>["keyExtractor"] = useMemo(() => friend => friend.uid, []);
+	const renderer: FlatListProps<Friend>["renderItem"] = useMemo(
+		() => data => <FriendListItem friend={data.item} />,
+		[]
+	);
+
+	const friends = friendService.getAllSuspensive().filter(filterFn);
+
+	return <FlatList data={friends} keyExtractor={keyExtractor} renderItem={renderer} />;
+};
+
+const FriendListItem: React.FC<{ friend: Friend }> = React.memo(
+	withNavigation<{ friend: Friend }>(({ friend, navigation }) => (
+		<View style={styles.row}>
+			<Text onPress={() => navigation.navigate("Chat")} style={styles.name}>
+				{friend.name}
+			</Text>
+		</View>
+	))
+);
 
 const styles = StyleSheet.create({
 	container: {
