@@ -6,6 +6,8 @@ import { ChatScreen } from "./ui/screens/chatScreen";
 import { ContactsScreen } from "./ui/screens/contactsScreen";
 import { HomeScreen } from "./ui/screens/homeScreen";
 import { NewContactScreen } from "./ui/screens/newContactScreen";
+import { OnBoardingScreen } from "./ui/screens/onBoardingScreen";
+import { tsNonNullExpression } from "@babel/types";
 
 const AppStackNavigator = createStackNavigator(
 	{
@@ -21,9 +23,15 @@ const AppStackNavigator = createStackNavigator(
 		Chat: {
 			screen: ChatScreen,
 		},
+		OnBoarding: {
+			screen: OnBoardingScreen,
+			navigationOptions: {
+				header: null,
+			},
+		},
 	},
 	{
-		initialRouteName: "Contacts",
+		initialRouteName: "OnBoarding",
 		cardStyle: { backgroundColor: "#3511B1" },
 		headerBackTitleVisible: false,
 		defaultNavigationOptions: {
