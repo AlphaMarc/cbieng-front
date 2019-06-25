@@ -9,6 +9,7 @@ import { ContactsScreen } from "./ui/screens/contactsScreen";
 import { HomeScreen } from "./ui/screens/homeScreen";
 import { LoginScreen } from "./ui/screens/loginScreen";
 import { NewContactScreen } from "./ui/screens/newContactScreen";
+import { OnBoardingScreen } from "./ui/screens/onBoardingScreen";
 
 const stackOptions: StackNavigatorConfig = {
 	cardStyle: { backgroundColor: "#3511B1" },
@@ -43,6 +44,12 @@ const AppStackNavigator = createStackNavigator(
 		Chat: {
 			screen: ChatScreen,
 		},
+		OnBoarding: {
+			screen: OnBoardingScreen,
+			navigationOptions: {
+				header: null,
+			},
+		},
 	},
 	{ ...stackOptions, initialRouteName: "Contacts" }
 );
@@ -51,6 +58,22 @@ const AuthStackNavigator = createStackNavigator(
 	{
 		Login: {
 			screen: LoginScreen,
+		},
+		initialRouteName: "OnBoarding",
+		cardStyle: { backgroundColor: "#3511B1" },
+		headerBackTitleVisible: false,
+		defaultNavigationOptions: {
+			headerStyle: {
+				backgroundColor: "#3511B1",
+				elevation: 0,
+				borderBottomWidth: 0,
+			},
+			headerTitleStyle: {
+				color: "white",
+				fontSize: 20,
+				fontFamily: "Hind-Bold",
+			},
+			headerTintColor: "white",
 		},
 	},
 	stackOptions
