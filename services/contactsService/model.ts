@@ -1,5 +1,8 @@
-export interface OsContact {
+type RegistrationInfo =
+	| { isUserRegistered: true; uid: string; }
+	| { isUserRegistered: false; uid?: never };
+
+export type OsContact = {
 	name: string;
-	phoneNumber: string | null;
-	isUserRegistered: boolean;
-}
+	phoneNumber: string;
+} & RegistrationInfo;

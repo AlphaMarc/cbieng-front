@@ -1,9 +1,8 @@
 import { List } from "immutable";
 import { Signal } from "micro-signals";
 import { AsyncStorage, PermissionsAndroid, Platform } from "react-native";
-import { getAll } from "./native";
-import { findRegisteredFriends } from "./firebase";
 import { OsContact } from "./model";
+import { getAll } from "./native";
 
 const CONTACT_KEY = "phone_contacts";
 
