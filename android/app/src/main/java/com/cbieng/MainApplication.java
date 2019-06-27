@@ -6,6 +6,7 @@ import com.facebook.react.ReactApplication;
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.auth.RNFirebaseAuthPackage;
 import io.invertase.firebase.functions.RNFirebaseFunctionsPackage;
+import io.invertase.firebase.messaging.RNFirebaseMessagingPackage;
 import com.zmxv.RNSound.RNSoundPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.rt2zz.reactnativecontacts.ReactNativeContacts;
@@ -33,6 +34,7 @@ public class MainApplication extends Application implements ReactApplication {
             new RNFirebasePackage(),
             new RNFirebaseAuthPackage(),
             new RNFirebaseFunctionsPackage(),
+            new RNFirebaseMessagingPackage(),
             new RNSoundPackage(),
             new LinearGradientPackage(),
             new ReactNativeContacts(),
