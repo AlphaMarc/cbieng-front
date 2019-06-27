@@ -673,6 +673,7 @@
 		77215282AE4023CF14B15FC91DEE4F61 /* FirebaseAuth-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FirebaseAuth-dummy.m"; sourceTree = "<group>"; };
 		7888F0B09D75F5FEFED28D92D1755DC8 /* FIRGetOOBConfirmationCodeRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRGetOOBConfirmationCodeRequest.m; path = Firebase/Auth/Source/RPCs/FIRGetOOBConfirmationCodeRequest.m; sourceTree = "<group>"; };
 		78A556EEA2E7AE779A711061827B38FE /* Pods-CBieng.prod release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CBieng.prod release.xcconfig"; sourceTree = "<group>"; };
+		78C5C0BECE711D055123C6B191BF139A /* FIRInstanceIDCheckinPreferences+Internal.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "FIRInstanceIDCheckinPreferences+Internal.m"; path = "Firebase/InstanceID/FIRInstanceIDCheckinPreferences+Internal.m"; sourceTree = "<group>"; };
 		790624F8A0A3597C747FB754F76040B0 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/SafariServices.framework; sourceTree = DEVELOPER_DIR; };
 		7A73766F4FF8130486E9167E7CE0C62E /* FIRErrors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRErrors.m; path = Firebase/Core/FIRErrors.m; sourceTree = "<group>"; };
 		7A9261D67D822D8E72DFDC4F0A4536FE /* FirebaseInstanceID.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FirebaseInstanceID.xcconfig; sourceTree = "<group>"; };
@@ -917,6 +918,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8C0060EFBE118A9BA9F01757FF066AB /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		898D743FCB2B9DFA4CAC0D4F2561B3C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1267,8 +1275,8 @@
 				9D6F27693E5693D3F420014A966D8AC0 /* Support Files */,
 				41702B3C83C7798E5FD9B8B0ACC3F9C7 /* UserDefaults */,
 			);
-			name = GoogleUtilities;
-			path = GoogleUtilities;
+			name = GTMSessionFetcher;
+			path = GTMSessionFetcher;
 			sourceTree = "<group>";
 		};
 		39041C67E75563B782B92D9496630E3D /* CoreOnly */ = {
@@ -1387,8 +1395,8 @@
 			children = (
 				16C5ACB8D0E6363165C0F6F50500F957 /* Frameworks */,
 			);
-			name = GoogleAppMeasurement;
-			path = GoogleAppMeasurement;
+			name = "Support Files";
+			path = "../Target Support Files/Protobuf";
 			sourceTree = "<group>";
 		};
 		661FCAD1764EDDE1FDFF2C0EFBCBCE6F /* iOS */ = {
@@ -1441,7 +1449,8 @@
 				4B79FD81B7140AF2ACEFCAB22E59AC94 /* GULNetworkURLSession.h */,
 				1C41858B0AC33B6A46F051D5E50089CD /* GULNetworkURLSession.m */,
 			);
-			name = Network;
+			name = FirebaseAnalytics;
+			path = FirebaseAnalytics;
 			sourceTree = "<group>";
 		};
 		7E24B8538B49F1ACD97464B211B29FCF /* FirebaseInstanceID */ = {
@@ -1525,7 +1534,7 @@
 				0CBC1F6DCC036F2B30289D8600E61A3D /* GULAppDelegateSwizzler_Private.h */,
 				A9E3E4EF8DFAC6524184F592604A108E /* GULLoggerCodes.h */,
 			);
-			name = AppDelegateSwizzler;
+			name = MethodSwizzler;
 			sourceTree = "<group>";
 		};
 		9D6F27693E5693D3F420014A966D8AC0 /* Support Files */ = {
@@ -1583,6 +1592,37 @@
 				661FCAD1764EDDE1FDFF2C0EFBCBCE6F /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C8541B3B791E7BF779342FFF61EEEC8F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				37A0B0DCC4A2E8E2F6AA403F8718D50B /* Firebase */,
+				893CD54754221A307DC46D478DD871C6 /* FirebaseAnalytics */,
+				995A1207485D7892B396C0F8FDF1FB3C /* FirebaseAnalyticsInterop */,
+				4EA1E9D81B7AE813B403A2EB0952B184 /* FirebaseAuth */,
+				6B6E374E306E817B10F7F2CF87103B55 /* FirebaseAuthInterop */,
+				8C345E9118C574D788B773144E72AFDE /* FirebaseCore */,
+				A964C3F4A616DE29D13D7EC7DC16E311 /* FirebaseInstanceID */,
+				32EB79A0333F2847A54238884AA55233 /* FirebaseMessaging */,
+				9C5121F273052D5235434E350662B81F /* GoogleAppMeasurement */,
+				62E6DD5758EFC09EF99AEE0850FAEA45 /* GoogleUtilities */,
+				42FE3ABBCC9CC422F322879B5E825F36 /* GTMSessionFetcher */,
+				C262B570AD4D52588699D9C47126AE1D /* nanopb */,
+				0612B7EB87604B4FF1E911E963E87740 /* Protobuf */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CA4F8179E42AAD6488F0A890906E5A87 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B02CDA0C139C835268A2E51961FF017D /* GoogleUtilities.xcconfig */,
+				59DE57083A7C52FBD2E2670122DA4E84 /* GoogleUtilities-dummy.m */,
+				AA3919E71682C1B5E1AAEB009A14054B /* GoogleUtilities-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GoogleUtilities";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -1875,14 +1915,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7E18DEE85AEBBF97DFBEC023B86655DF /* Headers */ = {
+		7AEDA363B192E8204795B774737B381D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				167274C605CF294C017AB66C6F48BED3 /* pb.h in Headers */,
-				DCC0804614DC31F98178ADF856CC29A6 /* pb_common.h in Headers */,
-				E70B92ED8272A7AF3654C15097636DAA /* pb_decode.h in Headers */,
-				F2BAEE9C653E46227E73F5332078B7F2 /* pb_encode.h in Headers */,
+				8FDC40157D63D6FB6ABC938FDDA49E39 /* FirebaseMessaging.h in Headers */,
+				13A7A19461B7A0FC762718F9DDC6F4FA /* FirebaseMessaging.h in Headers */,
+				61A71F964D13168674759667C8FAE820 /* FIRMessaging.h in Headers */,
+				7E8BCF955B2B4DB263D0950827895782 /* FIRMessaging_Private.h in Headers */,
+				C3D1A462249DCB8C2269FFE6ED3C7020 /* FIRMessagingAnalytics.h in Headers */,
+				586DE9A8984651097312A0E67463FCE2 /* FIRMessagingCheckinService.h in Headers */,
+				8DC0B0B4A42813D42B62AF6D147D792F /* FIRMessagingClient.h in Headers */,
+				1DE231CAB99E3B07C7434B9237C157C4 /* FIRMessagingCodedInputStream.h in Headers */,
+				2156751AC0D5F22F933C49F0727D5774 /* FIRMessagingConnection.h in Headers */,
+				9B4EA2CFED593065E561923E8E6A0F5E /* FIRMessagingConstants.h in Headers */,
+				84934F5B9FBCE08005C63360C083F4C0 /* FIRMessagingContextManagerService.h in Headers */,
+				1AB9F4BACFDEED6B8F2F478F49F7CD28 /* FIRMessagingDataMessageManager.h in Headers */,
+				90B747D92CC5818159D88BD8227EEADE /* FIRMessagingDefines.h in Headers */,
+				B57AA280A3314F9B1B06FA77C1780399 /* FIRMessagingDelayedMessageQueue.h in Headers */,
+				BA2B40416EE1138BCB5CB97A3431EB85 /* FIRMessagingExtensionHelper.h in Headers */,
+				A67D3A1F3956D127B81DF055E28B9EC6 /* FIRMessagingInternalUtilities.h in Headers */,
+				E40FDE57E85B8811B967D086AEF73F10 /* FIRMessagingLogger.h in Headers */,
+				3F245F076E4AB9C2D8160F9691198354 /* FIRMessagingPacketQueue.h in Headers */,
+				AA8D674130D01B25F5DF2FF93B167BD8 /* FIRMessagingPendingTopicsList.h in Headers */,
+				F33B3915402C926A0D34FFCB5FA91BF7 /* FIRMessagingPersistentSyncMessage.h in Headers */,
+				498D948C6111D20AE91A4666CE653E1F /* FIRMessagingPubSub.h in Headers */,
+				863C51FC035E2BA7A4A2BC6BF05CCF0D /* FIRMessagingPubSubRegistrar.h in Headers */,
+				DB020FECEAE52447F089929194BD96DB /* FIRMessagingReceiver.h in Headers */,
+				627EA5F3C5BB642C12FEF8666116550B /* FIRMessagingRegistrar.h in Headers */,
+				2CBC9E9C4387F5EA0DBE5A2237BC332D /* FIRMessagingRemoteNotificationsProxy.h in Headers */,
+				219D2C0E68420ED36D629F356E76127F /* FIRMessagingRmq2PersistentStore.h in Headers */,
+				0B7C50744BF588FA379582DE46856FC7 /* FIRMessagingRmqManager.h in Headers */,
+				5D53E4991D78E1B0CFA5918FA5C8C6E3 /* FIRMessagingSecureSocket.h in Headers */,
+				BFE8E212307470A62803B37D05E58991 /* FIRMessagingSyncMessageManager.h in Headers */,
+				A133F5DF947951475F61AEF39383049A /* FIRMessagingTopicOperation.h in Headers */,
+				5A34FE9D2ED4C78649E48DBA31F40E5C /* FIRMessagingTopicsCommon.h in Headers */,
+				6409351D6703F9CC75AF0AC51751A67E /* FIRMessagingUtilities.h in Headers */,
+				2B70601B28DC9677AAF6A3E9849D513D /* FIRMessagingVersionUtilities.h in Headers */,
+				0C06D154D90AC82F3A101379A287E041 /* FIRMMessageCode.h in Headers */,
+				4C57BA67A90349057E1531F4AEE5163A /* GtalkCore.pbobjc.h in Headers */,
+				924FFB2E5ADB048FB5D153D6BF838C84 /* GtalkExtensions.pbobjc.h in Headers */,
+				57DEAFE690AE611F4E737A6CFE22DCCA /* NSDictionary+FIRMessaging.h in Headers */,
+				D493907D53B906D5D7D698F647417F54 /* NSError+FIRMessaging.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1938,19 +2012,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		10A88711D56644DCF18BA96284F6BC36 /* FirebaseInstanceID */ = {
+		0E7B3F1FEC054D14A3AB42B26C46A7E8 /* Pods-CBieng */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F5158CA893DF3F9E5EE09A349EFC1440 /* Build configuration list for PBXNativeTarget "FirebaseInstanceID" */;
+			buildConfigurationList = 3AB279A9B94C1C1FA343CE1B3E2D78C8 /* Build configuration list for PBXNativeTarget "Pods-CBieng" */;
 			buildPhases = (
-				D55CA487F2A8AEAC8DAE3C2BD3BF5FA1 /* Headers */,
-				7D7D28D3B95D8F2888294516F285F87A /* Sources */,
-				F9584DE6D3BE0DCD1EF02AB151E2399C /* Frameworks */,
+				E46015332F112525D6C21764C51705A2 /* Headers */,
+				046613745C85A8C78E7463C1127FB2C5 /* Sources */,
+				898D743FCB2B9DFA4CAC0D4F2561B3C0 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				12A3A3310C07EAE469C557D9FFAC2ABC /* PBXTargetDependency */,
-				1632A092511F08B5DCDF6BA242A23DE3 /* PBXTargetDependency */,
+				6F9C32FD7D016FA8B7B56F05F229353C /* PBXTargetDependency */,
+				4666864FCAE54D13EF6284576FC5AAA4 /* PBXTargetDependency */,
+				62D97729D65C884F06C864856231C17C /* PBXTargetDependency */,
+				BAE555AC0F0C4D68E995D5314F9F38B0 /* PBXTargetDependency */,
+				4FE2406032F41B913465E331835B6596 /* PBXTargetDependency */,
+				84A1820E0B964D898DA50CCAA8D127AF /* PBXTargetDependency */,
+				1C1CEE827FB19C31FDD3E29D0BAEB533 /* PBXTargetDependency */,
+				895563570027017B2145650DC31957D6 /* PBXTargetDependency */,
 			);
 			name = FirebaseInstanceID;
 			productName = FirebaseInstanceID;
@@ -2115,6 +2195,7 @@
 				9779BE71AFB4045B5B66B37174ECD682 /* FirebaseCore */,
 				E7F6C674513079FD2E01638A38BB4408 /* FirebaseFunctions */,
 				10A88711D56644DCF18BA96284F6BC36 /* FirebaseInstanceID */,
+				F7F2F226DF3C5CE94FD7251A7FC9CD8B /* FirebaseMessaging */,
 				DAC3CBA1C2DE891990D0E7A2D9AD6597 /* GoogleUtilities */,
 				C2474F9D8E3392B6342A5408852D934F /* GTMSessionFetcher */,
 				BB87C0117DDD5CE908365AF5882F0EC9 /* nanopb */,
@@ -2309,6 +2390,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		80D651BFF4EFC29BE1A516CAEC96DAA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCAE1E91DFDEDB9C1E7623BBC03319AC /* FirebaseMessaging-dummy.m in Sources */,
+				BF29BD6EDED5373BC895E7BA636504C3 /* FIRMessaging.m in Sources */,
+				4DAF0D60C55A65A7AD506A647821752C /* FIRMessagingAnalytics.m in Sources */,
+				423C10B72903D7384CC04E2C8749A259 /* FIRMessagingCheckinService.m in Sources */,
+				46B1414589B496E8D96C2EFB070CB404 /* FIRMessagingClient.m in Sources */,
+				05B744596610AFD749B6EB1EDD53C088 /* FIRMessagingCodedInputStream.m in Sources */,
+				ACAD3309E10666736BEB691BAFEE0384 /* FIRMessagingConnection.m in Sources */,
+				E2C537758CEE915F2487BA04DE6C7F15 /* FIRMessagingConstants.m in Sources */,
+				096476DB17B7F0D55FD6D3AFD7A0FCCF /* FIRMessagingContextManagerService.m in Sources */,
+				C834CD55D6808BEFE37B2638C6239C1F /* FIRMessagingDataMessageManager.m in Sources */,
+				86DADE1EA79190E533EEB2EC27C715E9 /* FIRMessagingDelayedMessageQueue.m in Sources */,
+				A94F23BDA0603F76BA0BAC0ACFA87E5C /* FIRMessagingExtensionHelper.m in Sources */,
+				EA5863DF78F5449D5CB0238C1C578EDC /* FIRMessagingLogger.m in Sources */,
+				52BEF1BA7EFCD3B405984406D96F983E /* FIRMessagingPacketQueue.m in Sources */,
+				E393B99F813DEE774F91B425AC9DFCEC /* FIRMessagingPendingTopicsList.m in Sources */,
+				07D29E0A58D1D24AA97F36EBB002CF41 /* FIRMessagingPersistentSyncMessage.m in Sources */,
+				B9DF6C13E1C8B1B6A17F34FCDA454CAF /* FIRMessagingPubSub.m in Sources */,
+				73DBC849E58382E1B9EC4ADDA6659751 /* FIRMessagingPubSubRegistrar.m in Sources */,
+				6E031AB47D21EA7D90B7BDD2F1EEA291 /* FIRMessagingReceiver.m in Sources */,
+				6B0BAAFECB2A959CB833B7BE48FC4C53 /* FIRMessagingRegistrar.m in Sources */,
+				871FFDB08E14E40CBFD7D956026FC74A /* FIRMessagingRemoteNotificationsProxy.m in Sources */,
+				95CB5667A17F7A378A6D8C0CD588626B /* FIRMessagingRmq2PersistentStore.m in Sources */,
+				19CE3D4785ED21601BC22F25D6AC550A /* FIRMessagingRmqManager.m in Sources */,
+				8E25451348EEAF7480CB8127F33F9945 /* FIRMessagingSecureSocket.m in Sources */,
+				C793FE7CAB0A419BDAAB2C2EDA2EB5E3 /* FIRMessagingSyncMessageManager.m in Sources */,
+				BFDEE845E85964DEC978AC91A8FBDD48 /* FIRMessagingTopicOperation.m in Sources */,
+				662219BC0CCA7E27DC375FFC9EC2ABB8 /* FIRMessagingUtilities.m in Sources */,
+				230ACA6CA7C7E9ADE79F828DB702A596 /* FIRMessagingVersionUtilities.m in Sources */,
+				BFC31B2612DFEF70FA109C912794CCFE /* GtalkCore.pbobjc.m in Sources */,
+				591A8F78B9B3194B8C3E166D6E1E2667 /* GtalkExtensions.pbobjc.m in Sources */,
+				83191B8E5189360CC1BB83C0272F9D45 /* NSDictionary+FIRMessaging.m in Sources */,
+				68A060BF2FE82ACCCA236FC782FE4DBC /* NSError+FIRMessaging.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		82C39DA796B54872D91C60EC238B1B9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2337,6 +2457,38 @@
 				5DA1D870DC271B871A998D5724431ED3 /* GULReachabilityChecker.m in Sources */,
 				86BA3331CCA0895483A8B0A46E2A0B73 /* GULSwizzler.m in Sources */,
 				FD31084F58ABEEE30BB7A35E13C36C78 /* GULUserDefaults.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4E36C9F651EE392A3451E132B13B3BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6021771FC93375B0B212DC372EAACF0 /* Any.pbobjc.m in Sources */,
+				CFE5803E02318B8570DC3CC08BB11264 /* Api.pbobjc.m in Sources */,
+				7C734501104CDC5939E469BD7724D809 /* Duration.pbobjc.m in Sources */,
+				EE068FCFE48C6A3E9106B3FF1A2A9C22 /* Empty.pbobjc.m in Sources */,
+				CD397C84A838F07C6FCCA997D0E5F590 /* FieldMask.pbobjc.m in Sources */,
+				16BBB03688B12AEC5C98A41529A702C4 /* GPBArray.m in Sources */,
+				62F9A5D71ECE1D4647C461F25910982D /* GPBCodedInputStream.m in Sources */,
+				8283EEF5FEA3619BF2001F49200168AF /* GPBCodedOutputStream.m in Sources */,
+				C4EE2AEA2BB7EE323C00D6166CDC46DA /* GPBDescriptor.m in Sources */,
+				8D9D9A61B9C438FA02D23289BCD1778C /* GPBDictionary.m in Sources */,
+				5D01CCCF114B96FD5E88FE8B1DA89F6A /* GPBExtensionInternals.m in Sources */,
+				33D04B7CE39BEB4DDA15132C92DEE714 /* GPBExtensionRegistry.m in Sources */,
+				B139E8C97DD3044EB5E1291018C3BBF4 /* GPBMessage.m in Sources */,
+				98F0CAB592188721B1A8182E400F2868 /* GPBRootObject.m in Sources */,
+				516F160D2E7610EAA7ECBC60948D6A89 /* GPBUnknownField.m in Sources */,
+				497B7C141A67005F52506FA0395C6AF6 /* GPBUnknownFieldSet.m in Sources */,
+				7C077E29941156C07F774A9520F937BA /* GPBUtilities.m in Sources */,
+				1FA60664832DBD30FBBECB9A80FA4162 /* GPBWellKnownTypes.m in Sources */,
+				27B6253260DCEAC241F2AA2A02E3D7D5 /* GPBWireFormat.m in Sources */,
+				696F6EA37560831586314A5EE31025DE /* Protobuf-dummy.m in Sources */,
+				59150D2BD005E45754ED8A01C7090A1B /* SourceContext.pbobjc.m in Sources */,
+				85E23A437A58B1B9E42A7CBED39CC8A0 /* Struct.pbobjc.m in Sources */,
+				6ACD42F29D02D663553ECBBC7F1EF270 /* Timestamp.pbobjc.m in Sources */,
+				BFA2687B51FFC4999AF99F38A6601BCF /* Type.pbobjc.m in Sources */,
+				9CF8C894367A0A0D407FF860B7CDC505 /* Wrappers.pbobjc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2605,28 +2757,6 @@
 		};
 		31CC23D1F1DC1633203346B5CAC6820C /* Dev Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E816C31706EA01437914882D1FB52652 /* Pods-CBieng.dev release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = "Dev Release";
-		};
-		3D53B2CCC6CEA7B3F7A5AD8FC770F431 /* Release */ = {
-			isa = XCBuildConfiguration;
 			baseConfigurationReference = 94CF4FDC51C3683A9E114CD6A06D9644 /* Pods-CBieng.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
@@ -2647,9 +2777,9 @@
 			};
 			name = Release;
 		};
-		42F55BB344B09E01F49396EA1BE04EAA /* Dev Release */ = {
+		3D53B2CCC6CEA7B3F7A5AD8FC770F431 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A9261D67D822D8E72DFDC4F0A4536FE /* FirebaseInstanceID.xcconfig */;
+			baseConfigurationReference = 047932B7793E8F846D8493F2C3C15BA7 /* FirebaseMessaging.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2659,8 +2789,8 @@
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = FirebaseInstanceID;
-				PRODUCT_NAME = FirebaseInstanceID;
+				PRODUCT_MODULE_NAME = FirebaseMessaging;
+				PRODUCT_NAME = FirebaseMessaging;
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -2668,11 +2798,11 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = "Dev Release";
+			name = Release;
 		};
-		493CD61A5AF43D98DFD67CCE5DDD6051 /* Dev Release */ = {
+		42F55BB344B09E01F49396EA1BE04EAA /* Dev Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A40D539FA96C2D52FEC62B24F027F07 /* FirebaseCore.xcconfig */;
+			baseConfigurationReference = 7A9261D67D822D8E72DFDC4F0A4536FE /* FirebaseInstanceID.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2692,6 +2822,30 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Dev Release";
+		};
+		4CB53337C8272FD050EE05D81FCA61D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A40D539FA96C2D52FEC62B24F027F07 /* FirebaseCore.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/Protobuf/Protobuf-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = Protobuf;
+				PRODUCT_NAME = Protobuf;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
 		};
 		4DE3DEE31A96579B62800739445EC9A4 /* Dev Release */ = {
 			isa = XCBuildConfiguration;
@@ -2950,6 +3104,52 @@
 			};
 			name = "Dev Debug";
 		};
+		783D27B3E8CAD26A6CA18B91A1473AAF /* Prod Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4ECEBE490DF9E579D15F72FEB0AA2DC /* Protobuf.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/Protobuf/Protobuf-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = Protobuf;
+				PRODUCT_NAME = Protobuf;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Prod Debug";
+		};
+		79704C89C1FE784B45E490E14B0E0F8B /* Prod Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78A556EEA2E7AE779A711061827B38FE /* Pods-CBieng.prod release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Prod Release";
+		};
 		79B3242AB558F7CD60F1970893D1A5B2 /* Prod Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5A40D539FA96C2D52FEC62B24F027F07 /* FirebaseCore.xcconfig */;
@@ -3131,6 +3331,28 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Dev Debug";
+		};
+		910CC4F0B1C5B828D9AC5AAA2127FCBE /* Prod Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B65603F89AA9D5625FE8E884595DAF4 /* Pods-CBieng.prod debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Prod Debug";
 		};
 		91A148CD5C7989B9580EE80EB03DA930 /* Prod Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3316,6 +3538,28 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Prod Release";
+		};
+		A756AC83FC2126EBF7C16F47235E3E11 /* Dev Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E816C31706EA01437914882D1FB52652 /* Pods-CBieng.dev release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Dev Release";
 		};
 		A9550189BBD48CB201760A91112CE37C /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3671,6 +3915,28 @@
 			};
 			name = "Dev Debug";
 		};
+		D1F688D7D4E0DA5DAC62D4C5717F700C /* Dev Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D99A83D853B2AD4C064460D1356F90B /* Pods-CBieng.dev debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Dev Debug";
+		};
 		DA1866EAFF799F09FF9340AFCE6C04B5 /* Dev Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DBD6D3089662699274C8009EAD8B6930 /* FirebaseAuth.xcconfig */;
@@ -3957,6 +4223,45 @@
 				6E3D55512E29D813E17DE418CCABDD48 /* Prod Debug */,
 				BB3A0AB11FEE3974A5224174D7DA63DA /* Prod Release */,
 				980FC2D12FA8D2A3117521421E60A051 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2138859729DFB2088DD0EF56B947A638 /* Build configuration list for PBXNativeTarget "Protobuf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0750C8776E7100FDDE8B26678FE2C6F0 /* Debug */,
+				3534C07E57927ED1B40CC0DC8C66F8F1 /* Dev Debug */,
+				10A5BD0B056A1D7A60AD9EE9412F4E2B /* Dev Release */,
+				783D27B3E8CAD26A6CA18B91A1473AAF /* Prod Debug */,
+				9B7F929B02794B5D857548CB1BB45FCC /* Prod Release */,
+				4CB53337C8272FD050EE05D81FCA61D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8BD778CAC2AC394D26BE656DC49DDA /* Build configuration list for PBXNativeTarget "FirebaseMessaging" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49261894D80AEF3A57E4849573E4DDD9 /* Debug */,
+				CB74C773908A2788BFB5FA8D5B6685D4 /* Dev Debug */,
+				46BC5CC24DDDBA9F483D74E4BEBE5DAC /* Dev Release */,
+				CD92DAFD524F75760A61DDA80E75CA6A /* Prod Debug */,
+				3FD0825C99ECD0B822778E0D1D0BC025 /* Prod Release */,
+				24B836DE952CA9EF85C556A227C22F43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AB279A9B94C1C1FA343CE1B3E2D78C8 /* Build configuration list for PBXNativeTarget "Pods-CBieng" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				762C7636BF3435FC7F700B8D9DDB265D /* Debug */,
+				D1F688D7D4E0DA5DAC62D4C5717F700C /* Dev Debug */,
+				A756AC83FC2126EBF7C16F47235E3E11 /* Dev Release */,
+				910CC4F0B1C5B828D9AC5AAA2127FCBE /* Prod Debug */,
+				79704C89C1FE784B45E490E14B0E0F8B /* Prod Release */,
+				1777F8BEDE013B9BE7CD0961BA1C6823 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

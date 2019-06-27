@@ -1,7 +1,7 @@
-import { SafeAreaView, StyleSheet, Text, View, Animated, Image, Dimensions, TouchableOpacity } from "react-native";
 import React from "react";
-import { SoundService } from "../../services/soundService";
+import { Animated, Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { NavigationScreenComponent } from "react-navigation";
+import { SoundService } from "../../services/soundService";
 
 const SCREEN_HEIGHT = Dimensions.get("window").height;
 const SCREEN_WIDTH = Dimensions.get("window").width;
