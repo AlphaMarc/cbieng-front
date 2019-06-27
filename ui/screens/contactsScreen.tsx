@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import { NavigationScreenComponent } from "react-navigation";
 import { NewContactButton } from "../components/newContactButton";
-import { SearchInput } from "../components/searchInput";
+import { TextInput } from "../components/searchInput";
 
 export const ContactsScreen: NavigationScreenComponent = ({ navigation }) => {
 	const [filter, setFilter] = useState("");
 
 	return (
 		<SafeAreaView style={styles.container}>
-			<SearchInput
+			<TextInput
+				type="search"
 				style={styles.input}
 				placeholder="Chercher un contact"
 				value={filter}

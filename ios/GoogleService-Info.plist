@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1067436718220-i50i9rlloqsaaaad07g4s1hq3lktd0bv.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1067436718220-i50i9rlloqsaaaad07g4s1hq3lktd0bv</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDWAurBG2hDwwq6KWyWEnZvkQQosS7ck7c</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1067436718220</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.reactjs.native.example.CBieng</string>
+	<key>PROJECT_ID</key>
+	<string>cbieng-dev</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cbieng-dev.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1067436718220:ios:3b18c5a3147b338a</string>
+	<key>DATABASE_URL</key>
+	<string>https://cbieng-dev.firebaseio.com</string>
+</dict>
+</plist>
