@@ -1,0 +1,54 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+
+  desc "Pull remote development certificates and provisionning"
+  lane :match_dev_readonly do
+    match(type: "development", app_identifier: ["com.betomorrow.cbieng.dev","com.betomorrow.cbieng"], readonly: true)
+  end
+
+  desc "Submit a new Dev build to AppCenter"
+  lane :dev do
+    increment_build_number(build_number: number_of_commits)
+    match(type: "adhoc", app_identifier: "com.betomorrow.cbieng.dev", readonly: true)
+    build("Dev")
+  end
+
+  desc "Submit a new Prod build to TestFlight"
+  lane :prod do
+    increment_build_number(build_number: number_of_commits)
+    match(type: "appstore", app_identifier: "com.betomorrow.cbieng", readonly: true)
+    build("Prod")
+  end
+end
+
+def build(flavor)
+  build_app(scheme: "CBieng", configuration: "#{flavor} Release", output_name: "cbieng_#{flavor}_release.ipa")
+end
+
+def changelog
+  changelog_from_git_commits(commits_count: 1)
+  changelog = lane_context[SharedValues::FL_CHANGELOG]
+  branch = git_branch
+  if branch == "master" || branch == "origin/master"
+    return "Master:\n#{changelog}"
+  else
+    return "Build for branch \"#{branch}\":\n#{changelog}"
+  end
+
+end

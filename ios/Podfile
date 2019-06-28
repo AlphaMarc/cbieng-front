@@ -10,23 +10,4 @@ target 'CBieng' do
   # use_frameworks!
 
   # Pods for CBieng
-
-  target 'CBiengTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-end
-
-target 'CBieng-tvOS' do
-  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
-
-  # Pods for CBieng-tvOS
-
-  target 'CBieng-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end

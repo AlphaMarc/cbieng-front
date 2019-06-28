@@ -3,13 +3,14 @@ import { RNFirebase } from "react-native-firebase";
 import { createAppContainer, createStackNavigator, StackNavigatorConfig } from "react-navigation";
 import { AuthService } from "./services/authService";
 import { ContactService } from "./services/contactsService";
+import { FriendService } from "./services/friendService";
 import { ServicesContext } from "./services/servicesContext";
 import { ChatScreen } from "./ui/screens/chatScreen";
 import { ContactsScreen } from "./ui/screens/contactsScreen";
 import { HomeScreen } from "./ui/screens/homeScreen";
 import { LoginScreen } from "./ui/screens/loginScreen";
 import { NewContactScreen } from "./ui/screens/newContactScreen";
-import { FriendService } from "./services/friendService";
+import { OnBoardingScreen } from "./ui/screens/onBoardingScreen";
 
 const stackOptions: StackNavigatorConfig = {
 	cardStyle: { backgroundColor: "#3511B1" },
@@ -50,11 +51,20 @@ const AppStackNavigator = createStackNavigator(
 
 const AuthStackNavigator = createStackNavigator(
 	{
+		OnBoarding: {
+			screen: OnBoardingScreen,
+			navigationOptions: {
+				header: null,
+			},
+		},
 		Login: {
 			screen: LoginScreen,
 		},
 	},
-	stackOptions
+	{
+		...stackOptions,
+		initialRouteName: "OnBoarding",
+	}
 );
 
 const contactService = new ContactService();
