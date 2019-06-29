@@ -1,5 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
+import React, { useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { FlatList, ListRenderItem, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { useNavigation } from "react-navigation-hooks";
 import { useChangingValue } from "../../core/hooks";
 import { OsContact } from "../../services/contactsService/model";
 import { ServicesContext } from "../../services/servicesContext";
@@ -9,10 +10,17 @@ export const NewContactScreen = () => {
 	const { contactService } = useContext(ServicesContext);
 	const contacts = useChangingValue(contactService.phoneContacts, contactService.onPhoneContacts, []);
 	const [filter, setFilter] = useState("");
+	const filteredContacts = useMemo(
+		() => contacts.filter(({ name, phoneNumber }) => phoneNumber && name.includes(filter)).toArray(),
+		[contacts, filter]
+	);
 
 	useEffect(() => {
 		contactService.syncContacts();
 	}, []);
+
+	const keyExtractor = useCallback((item: OsContact) => item.phoneNumber, []);
+	const renderItem = useCallback<ListRenderItem<OsContact>>(({ item }) => <ContactRow contact={item} /> , []);
 
 	return (
 		<SafeAreaView style={styles.container}>
@@ -23,26 +31,38 @@ export const NewContactScreen = () => {
 				value={filter}
 				onChangeText={v => setFilter(v)}
 			/>
-			<ScrollView>
-				{contacts
-					.filter(contact => contact.phoneNumber)
-					.filter(contact => contact.name.includes(filter))
-					.map((contact, i) => (
-						<ContactRow contact={contact} key={i} />
-					))}
-			</ScrollView>
+			<FlatList
+				data={filteredContacts}
+				keyExtractor={keyExtractor}
+				renderItem={renderItem}
+			/>
 		</SafeAreaView>
 	);
 };
 
 NewContactScreen.navigationOptions = { title: "Ajoute un pote ✌" };
 
-const ContactRow: React.FC<{ contact: OsContact }> = ({ contact }) => (
-	<View style={styles.row}>
-		<Text style={styles.name}>{contact.name}</Text>
-		<Text style={styles.infos}>{`${contact.isUserRegistered ? "Utilise" : "N'utilise pas"} c'est bieng - ${contact.phoneNumber}`}</Text>
-	</View>
-);
+const ContactRow: React.FC<{ contact: OsContact }> = ({ contact }) => {
+	const navigation = useNavigation();
+	const { friendService } = useContext(ServicesContext);
+	const addFriend = useCallback(() => {
+		if (contact.isUserRegistered) {
+			friendService.add(contact);
+			navigation.pop();
+		}
+	}, [contact, friendService, navigation]);
+
+	return (
+		<TouchableOpacity onPress={addFriend}>
+			<View style={styles.row}>
+				<Text style={styles.name}>{contact.name}</Text>
+				<Text style={styles.infos}>{`${contact.isUserRegistered ? "Utilise" : "N'utilise pas"} c'est bieng - ${
+					contact.phoneNumber
+				}`}</Text>
+			</View>
+		</TouchableOpacity>
+	);
+};
 
 const styles = StyleSheet.create({
 	container: {

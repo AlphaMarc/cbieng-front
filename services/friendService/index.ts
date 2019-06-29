@@ -1,7 +1,9 @@
+import { OsContact } from "../contactsService/model";
 import { Friend } from "./model";
-import { getAll } from "./repository";
+import { add, getAll } from "./repository";
 
 export class FriendService {
+
 	private friends?: Friend[];
 
 	getAllSuspensive(forceReload: boolean = false): Friend[] {
@@ -12,6 +14,16 @@ export class FriendService {
 		}
 
 		return this.friends;
+	}
+
+	async add(contact: OsContact): Promise<void> {
+		if (contact.isUserRegistered) {
+			const friend: Friend = {
+				name: contact.name,
+				uid: contact.uid,
+			};
+			await add(friend);
+		}
 	}
 }
 
