@@ -36,6 +36,8 @@ export class AuthService {
 					const { verificationId, code } = snapshot;
 					if (verificationId && code) {
 						this.authWithVerificationIdAndCode(verificationId, code);
+					} else {
+						await firebase.auth().signInWithPhoneNumber(phoneNumber);
 					}
 					break;
 			}
