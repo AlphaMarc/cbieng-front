@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "1067436718220-ktha46enr8bnv54v8090la4ovlktu5c7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cbieng",
+            "certificate_hash": "184512eda47b2d65d0cf791739f607562cd20c7f"
+          }
+        },
+        {
+          "client_id": "1067436718220-gh40c7pkgbbe5hf6h21srq1di2plsfoa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cbieng",
+            "certificate_hash": "f5785be2270a99b83953af5a186ae5904e37bae3"
+          }
+        },
+        {
           "client_id": "1067436718220-1itmd0b22s68hbsvpv963vep63kidpn9.apps.googleusercontent.com",
           "client_type": 3
         }
