@@ -15,18 +15,18 @@
       },
       "oauth_client": [
         {
-          "client_id": "1067436718220-ktha46enr8bnv54v8090la4ovlktu5c7.apps.googleusercontent.com",
+          "client_id": "1067436718220-kn4u7ubmi9rf5m0r799im1n4kvs85fv1.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.cbieng",
+            "package_name": "com.betomorrow.cbieng.dev",
             "certificate_hash": "184512eda47b2d65d0cf791739f607562cd20c7f"
           }
         },
         {
-          "client_id": "1067436718220-gh40c7pkgbbe5hf6h21srq1di2plsfoa.apps.googleusercontent.com",
+          "client_id": "1067436718220-c0ad2vogcpo38jpmdrir1c2e2v5cfn1f.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.cbieng",
+            "package_name": "com.betomorrow.cbieng.dev",
             "certificate_hash": "f5785be2270a99b83953af5a186ae5904e37bae3"
           }
         },
